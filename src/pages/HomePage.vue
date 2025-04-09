@@ -1,15 +1,12 @@
-<script>
+<script setup>
+import AppLayout from '../components/AppLayout.vue';
 import { ref } from 'vue';
-export default {
-  setup() {
-    const readersNumber = ref(0)
-    return {
-      readersNumber,
-    }
-  }
-}
+
+const bg = ref('./src/assets/img/bg-1.jpg');
 </script>
 
-<template>Home Page</template>
+<template>
+  <AppLayout :imgUrl="bg"/>
+</template>
 
 <style lang="sass" scoped></style>
