@@ -13,12 +13,14 @@
     <div :style="`background-image: url( ${imgUrl} )`" class="img"></div>
     <div class="main">
       <el-button class="btn">Get Random Cocktail</el-button>
+      <slot></slot>
     </div>
   </div>
 </template>
 
 <style lang="sass" scoped>
 @use '@/assets/styles/variables' as *
+@use "sass:color";
 
 .root
   display: flex
@@ -32,5 +34,22 @@
   background-size: cover
 
 .main
+  position: relative
   width: 50%
+  padding: 32px 40px
+
+.btn
+  position: absolute
+  top: 32px
+  right: 40px
+  font-size: 16px
+  font-family: 'Raleway', 'Arial', sans-serif
+  background-color: $accent
+  border-color: $accent
+  color: $text
+
+  &:hover,
+  &:active
+    background-color: color.adjust($accent, $lightness: -10%);
+    border-color: color.adjust($accent, $lightness: -10%);
 </style>
