@@ -13,6 +13,7 @@ export default [
     path: '/cocktails/:rid',
     name: 'cocktail',
     component: CocktailPage,
+    props: true,
   },
   {
     path: '/cocktail/random',

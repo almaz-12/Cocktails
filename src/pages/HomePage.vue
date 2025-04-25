@@ -10,17 +10,19 @@ const bg = ref('./src/assets/img/bg-1.jpg');
 const rootStore = useRootStore();
 rootStore.getIngredients();
 
-const { ingredients, cocktails } = storeToRefs(rootStore); //подробнее про storeToRefs
-const ingredient = ref(null);
-console.log(ingredient);
+const { ingredients, cocktails, ingredient } = storeToRefs(rootStore); //подробнее про storeToRefs
 
 function getCocktails() {
   rootStore.getCocktails(ingredient.value);
 }
+
+function removeIngredient() {
+  rootStore.setIngredient(null)
+}
 </script>
 
 <template>
-  <AppLayout :imgUrl="bg">
+  <AppLayout :imgUrl="bg" :backFunc="removeIngredient" :isShowBack="!!ingredient">
     <div class="wrapper">
       <div v-if="!ingredient || !cocktails" class="info">
         <div class="title">Choose your drink</div>
@@ -30,6 +32,7 @@ function getCocktails() {
           v-model="ingredient"
           placeholder="Choose main ingredient"
           size="large"
+          filterable
           class="select"
           @change="getCocktails"
         >
@@ -63,14 +66,6 @@ function getCocktails() {
 </template>
 
 <style lang="sass" scoped>
-.wrapper
-  display: flex
-  justify-content: center
-  align-items: center
-
-.info
-  padding: 80px 0
-  text-align: center
 
 .select-wrapper
   padding-top:50px

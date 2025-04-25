@@ -21,13 +21,17 @@ const props = defineProps({
   <div class="cocktail-item">
     <RouterLink :to="`/cocktails/${id}`">
       <img :src="imgUrl" :alt="title" class="cocktail-item-img">
+      <div class="cocktail-item-title">{{ title }}</div>
     </RouterLink>
-    <div class="cocktail-item-title">{{ title }}</div>
   </div>
 </template>
 
 
 <style scoped lang="sass">
+.cocktail-item
+  a
+    text-decoration: none
+
 .cocktail-item-img
   width: 120px
 
