@@ -2,22 +2,23 @@ import HomePage from '@/pages/HomePage.vue'
 import CocktailPage from '@/pages/CocktailPage.vue'
 import CocktailRandomPage from '@/pages/CocktailRandomPage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue';
+import { ROUTES_PATHS } from '@/constants';
 
 export default [
   {
-    path: '/',
-    name: 'home',
+    path: ROUTES_PATHS.HOME,
+    name: ROUTES_PATHS.HOME,
     component: HomePage,
   },
   {
-    path: '/cocktails/:rid',
-    name: 'cocktail',
+    path: ROUTES_PATHS.COCKTAIL,
+    name: ROUTES_PATHS.COCKTAIL,
     component: CocktailPage,
     props: true,
   },
   {
-    path: '/cocktail/random',
-    name: 'cocktailRandom',
+    path: ROUTES_PATHS.COCKTAIL_RANDOM,
+    name: ROUTES_PATHS.COCKTAIL_RANDOM,
     component: CocktailRandomPage,
   },
   {

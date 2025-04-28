@@ -55,11 +55,6 @@ async function fetchCocktail(rid) {
   }
 }
 
-function goBack() {
-  console.log('back');
-  router.back();
-}
-
 onMounted(() => {
   fetchCocktail(props.rid)
 })
@@ -69,7 +64,7 @@ onMounted(() => {
   <BaseLoader v-if="isLoading"/>
   <BaseAlert v-else-if="error" :text="error" type="error"/>
   <div class="wrap" v-if="cocktail">
-    <AppLayout :imgUrl="cocktail.strDrinkThumb" :backFunc="goBack">
+    <AppLayout :imgUrl="cocktail.strDrinkThumb">
       <div class="wrapper" >
         <div class="info">
           <div class="title">{{ cocktail.strDrink }}</div>
