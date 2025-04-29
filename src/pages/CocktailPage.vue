@@ -2,12 +2,9 @@
 import AppLayout from '../components/AppLayout.vue';
 import BaseLoader from '../components/BaseLoader.vue';
 import BaseAlert from '../components/BaseAlert.vue';
-import { useRouter } from 'vue-router';
 import { ref, defineProps, onMounted, computed } from 'vue';
 import { COCKTAIL_BY_ID_URL } from '@/constants'
 import { get } from '@/api'
-
-const router = useRouter();
 
 // через props компонент менее зависим от route
 const props = defineProps({

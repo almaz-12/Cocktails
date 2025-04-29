@@ -5,12 +5,9 @@ import 'swiper/css';
 import AppLayout from '../components/AppLayout.vue';
 import BaseLoader from '../components/BaseLoader.vue';
 import BaseAlert from '../components/BaseAlert.vue';
-import { useRouter } from 'vue-router';
 import { ref, onMounted, computed } from 'vue';
 import { COCKTAIL_RANDOM_URL, INGREDIENT_PIC } from '@/constants'
 import { get } from '@/api'
-
-const router = useRouter();
 
 const cocktail = ref(null);
 const isLoading = ref(false)
