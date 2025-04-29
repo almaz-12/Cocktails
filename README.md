@@ -28,7 +28,7 @@
 ## 📄 API
 Приложение использует следующие API:
 
-TheCocktailDB(https://www.thecocktaildb.com/api.php) - основное API коктейлей
+[TheCocktailDB](https://www.thecocktaildb.com/api.php) - основное API коктейлей
 
 ## 🚀 Установка
 
